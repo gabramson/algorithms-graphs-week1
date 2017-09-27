@@ -7,9 +7,11 @@ namespace SCC
     public class Graph
     {
         private List<Vertex> vertexList;
+        private int size;
 
         public Graph(int size)
         {
+            this.size = size;
             vertexList = new List<Vertex>(size);
         }
 
@@ -28,13 +30,22 @@ namespace SCC
 
         public Graph GetTranspose()
         {
-            return new Graph(vertexList.Capacity);
+            Graph t = new Graph(size);
+
+            foreach (Vertex v in vertexList)
+            {
+                foreach (int outNeighbor in v.outNeighbors)
+                {
+                    t.AddEdge(outNeighbor, v.index);
+                }
+            }
+            return t;
         }
 
         private class Vertex
         {
             public int index { get; }
-            List<int> outNeighbors;
+            public List<int> outNeighbors { get; }
 
             public Vertex(int myIndex)
             {
