@@ -8,6 +8,7 @@ namespace SCC
     {
         private List<Vertex> vertexList;
         private List<Boolean> visited;
+        private Stack<int> finishingTimes;
         private int size;
 
         public Graph()
@@ -15,6 +16,7 @@ namespace SCC
             this.size = 0;
             vertexList = new List<Vertex>();
             visited = new List<bool>();
+            finishingTimes = new Stack<int>();
         }
 
         public void AddEdge(int from, int to)
@@ -34,10 +36,39 @@ namespace SCC
             vertexList.Find(v => v.index == from).AddOutNeighbor(to);
         }
 
+        public void MakeSCC()
+        {
+            ResetVisited();
+            foreach (Vertex v in vertexList)
+            {
+                if (!visited[v.index-1])
+                {
+                    DFS(v, 
+                        vertex=> visited[vertex.index - 1] = true,
+                        vertex=> finishingTimes.Push(vertex.index));
+                }
+            }
+
+        }
+
+        private void DFS(Vertex v, Action<Vertex> pre, Action<Vertex> post)
+        {
+            pre(v);
+
+            foreach(int outNeighbor in v.outNeighbors)
+            {
+                if (!visited[outNeighbor-1])
+                {
+                    DFS(vertexList.Find(vertex => vertex.index == outNeighbor),pre, post);
+                }
+            }
+            post(v);
+        }
+
+
         public Graph GetTranspose()
         {
             Graph t = new Graph();
-            ResetVisited();
 
             foreach (Vertex v in vertexList)
             {

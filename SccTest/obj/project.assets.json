@@ -5640,7 +5640,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\garya\\.nuget\\packages\\": {},
+    "C:\\Users\\Gary\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -5649,17 +5649,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SccTest\\SccTest.csproj",
+      "projectUniqueName": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SccTest\\SccTest.csproj",
       "projectName": "SccTest",
-      "projectPath": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SccTest\\SccTest.csproj",
-      "packagesPath": "C:\\Users\\garya\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SccTest\\obj\\",
+      "projectPath": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SccTest\\SccTest.csproj",
+      "packagesPath": "C:\\Users\\Gary\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SccTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\garya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gary\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5672,8 +5672,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SCC\\SCC.csproj": {
-              "projectPath": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SCC\\SCC.csproj"
+            "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SCC\\SCC.csproj": {
+              "projectPath": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SCC\\SCC.csproj"
             }
           }
         }

@@ -17,6 +17,7 @@ namespace SccTest
             g.AddEdge(4, 5);
 
             Graph t = g.GetTranspose();
+            g.MakeSCC();
         }
     }
 }
