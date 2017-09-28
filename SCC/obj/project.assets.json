@@ -664,7 +664,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gary\\.nuget\\packages\\": {},
+    "C:\\Users\\garya\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -673,17 +673,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SCC\\SCC.csproj",
+      "projectUniqueName": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SCC\\SCC.csproj",
       "projectName": "SCC",
-      "projectPath": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SCC\\SCC.csproj",
-      "packagesPath": "C:\\Users\\Gary\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\C#\\Coursera\\alogorithms-graphs\\Week1\\SCC\\obj\\",
+      "projectPath": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SCC\\SCC.csproj",
+      "packagesPath": "C:\\Users\\garya\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\C#\\Coursera\\algorithms-graphs\\week1\\SCC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gary\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\garya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -9,3 +9,14 @@ D:\Projects\C#\Coursera\alogorithms-graphs\Week1\SCC\obj\Debug\netcoreapp2.0\SCC
 D:\Projects\C#\Coursera\alogorithms-graphs\Week1\SCC\obj\Debug\netcoreapp2.0\SCC.AssemblyInfo.cs
 D:\Projects\C#\Coursera\alogorithms-graphs\Week1\SCC\obj\Debug\netcoreapp2.0\SCC.dll
 D:\Projects\C#\Coursera\alogorithms-graphs\Week1\SCC\obj\Debug\netcoreapp2.0\SCC.pdb
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\bin\Debug\netcoreapp2.0\SCC.deps.json
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\bin\Debug\netcoreapp2.0\SCC.runtimeconfig.json
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\bin\Debug\netcoreapp2.0\SCC.runtimeconfig.dev.json
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\bin\Debug\netcoreapp2.0\SCC.dll
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\bin\Debug\netcoreapp2.0\SCC.pdb
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.csprojResolveAssemblyReference.cache
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.csproj.CoreCompileInputs.cache
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.AssemblyInfoInputs.cache
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.AssemblyInfo.cs
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.dll
+C:\projects\C#\Coursera\algorithms-graphs\week1\SCC\obj\Debug\netcoreapp2.0\SCC.pdb

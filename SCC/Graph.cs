@@ -8,11 +8,12 @@ namespace SCC
     {
         private List<Vertex> vertexList;
         private int size;
+        private int[] visited;
 
-        public Graph(int size)
+        public Graph()
         {
-            this.size = size;
-            vertexList = new List<Vertex>(size);
+            this.size = 0;
+            vertexList = new List<Vertex>();
         }
 
         public void AddEdge(int from, int to)
@@ -20,17 +21,19 @@ namespace SCC
             if (!vertexList.Exists(v => v.index == from))
             {
                 vertexList.Add(new Vertex(from));
+                size += 1;
             }
             if (!vertexList.Exists(v => v.index == to))
             {
                 vertexList.Add(new Vertex(to));
+                size += 1;
             }
             vertexList.Find(v => v.index == from).AddOutNeighbor(to);
         }
 
         public Graph GetTranspose()
         {
-            Graph t = new Graph(size);
+            Graph t = new Graph();
 
             foreach (Vertex v in vertexList)
             {

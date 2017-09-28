@@ -9,7 +9,7 @@ namespace SccTest
         [TestMethod]
         public void TestMethod1()
         {
-            Graph g = new Graph(5);
+            Graph g = new Graph();
             g.AddEdge(2, 1);
             g.AddEdge(1, 3);
             g.AddEdge(3, 2);
