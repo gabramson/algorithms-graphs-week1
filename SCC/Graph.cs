@@ -7,13 +7,14 @@ namespace SCC
     public class Graph
     {
         private List<Vertex> vertexList;
+        private List<Boolean> visited;
         private int size;
-        private int[] visited;
 
         public Graph()
         {
             this.size = 0;
             vertexList = new List<Vertex>();
+            visited = new List<bool>();
         }
 
         public void AddEdge(int from, int to)
@@ -21,11 +22,13 @@ namespace SCC
             if (!vertexList.Exists(v => v.index == from))
             {
                 vertexList.Add(new Vertex(from));
+                visited.Add(false);
                 size += 1;
             }
             if (!vertexList.Exists(v => v.index == to))
             {
                 vertexList.Add(new Vertex(to));
+                visited.Add(false);
                 size += 1;
             }
             vertexList.Find(v => v.index == from).AddOutNeighbor(to);
@@ -34,6 +37,7 @@ namespace SCC
         public Graph GetTranspose()
         {
             Graph t = new Graph();
+            ResetVisited();
 
             foreach (Vertex v in vertexList)
             {
@@ -43,6 +47,13 @@ namespace SCC
                 }
             }
             return t;
+        }
+
+        private void ResetVisited()
+        {
+            for (int i=0; i<size; i+=1){
+                visited[i]=false;
+            }
         }
 
         private class Vertex
