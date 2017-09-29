@@ -6,66 +6,64 @@ namespace SCC
 {
     public class Graph
     {
-        private List<Vertex> vertexList;
-        private List<Vertex> transposeList;
-        private List<Boolean> visited;
-        private Stack<int> finishingTimes;
+        private Dictionary<int, Vertex> forwardList;
+        private Dictionary<int, Vertex> transposeList;
+        private HashSet<int> visited;
+        private Stack<int> finishingOrder;
         public List<int> sccSizes { get; }
         private int size;
 
         public Graph()
         {
             this.size = 0;
-            vertexList = new List<Vertex>();
-            transposeList = new List<Vertex>();
-            visited = new List<bool>();
-            finishingTimes = new Stack<int>();
+            forwardList = new Dictionary<int, Vertex>();
+            transposeList = new Dictionary<int, Vertex>();
+            visited = new HashSet<int>();
+            finishingOrder = new Stack<int>();
             sccSizes = new List<int>();
         }
 
         public void AddEdge(int from, int to)
         {
-            if (!vertexList.Exists(v => v.index == from))
+            if (!forwardList.ContainsKey(from))
             {
-                vertexList.Add(new Vertex(from));
-                transposeList.Add(new Vertex(from));
-                visited.Add(false);
+                forwardList.Add(from, new Vertex(from));
+                transposeList.Add(from, new Vertex(from));
                 size += 1;
             }
-            if (!vertexList.Exists(v => v.index == to))
+            if (!forwardList.ContainsKey(to))
             {
-                vertexList.Add(new Vertex(to));
-                transposeList.Add(new Vertex(to));
-                visited.Add(false);
+                forwardList.Add(to, new Vertex(to));
+                transposeList.Add(to, new Vertex(to));
                 size += 1;
             }
-            vertexList.Find(v => v.index == from).AddOutNeighbor(to);
-            transposeList.Find(v => v.index == to).AddOutNeighbor(from);
+            forwardList[from].AddOutNeighbor(to);
+            transposeList[to].AddOutNeighbor(from);
         }
 
         public void MakeSCC()
         {
             ResetVisited();
-            foreach (Vertex v in vertexList)
+            foreach (Vertex v in forwardList.Values)
             {
-                if (!visited[v.index-1])
+                if (!visited.Contains(v.index))
                 {
-                    DFS(vertexList,
+                    DFS(forwardList,
                         v, 
-                        vertex=> visited[vertex.index - 1] = true,
-                        vertex=> finishingTimes.Push(vertex.index));
+                        vertex=> visited.Add(vertex.index),
+                        vertex=> finishingOrder.Push(vertex.index));
                 }
             }
             ResetVisited();
-            while (finishingTimes.Count > 0)
+            while (finishingOrder.Count > 0)
             {
-                int i = finishingTimes.Pop();
+                int i = finishingOrder.Pop();
                 int count = 0;
-                if (!visited[i-1])
+                if (!visited.Contains(i))
                 {
                     DFS(transposeList,
-                        transposeList.Find(v => v.index == i),
-                        vertex => { visited[vertex.index - 1] = true; count += 1; },
+                        transposeList[i],
+                        vertex => { visited.Add(vertex.index); count += 1; },
                         vertex => { });
                     sccSizes.Add(count);
                 }
@@ -74,14 +72,14 @@ namespace SCC
 
         }
 
-        private void DFS(List<Vertex> list,Vertex v, Action<Vertex> pre, Action<Vertex> post)
+        private void DFS(Dictionary<int, Vertex> list,Vertex v, Action<Vertex> pre, Action<Vertex> post)
         {
             pre(v);
             foreach(int outNeighbor in v.outNeighbors)
             {
-                if (!visited[outNeighbor-1])
+                if (!visited.Contains(outNeighbor))
                 {
-                    DFS(list,list.Find(vertex => vertex.index == outNeighbor),pre, post);
+                    DFS(list,list[outNeighbor],pre, post);
                 }
             }
             post(v);
@@ -89,9 +87,7 @@ namespace SCC
 
         private void ResetVisited()
         {
-            for (int i=0; i<size; i+=1){
-                visited[i]=false;
-            }
+            visited.Clear();
         }
 
         private class Vertex
