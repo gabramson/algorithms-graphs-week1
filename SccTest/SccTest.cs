@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 using SCC;
 
 namespace SccTest
@@ -15,9 +17,9 @@ namespace SccTest
             g.AddEdge(3, 2);
             g.AddEdge(1, 4);
             g.AddEdge(4, 5);
-
-            Graph t = g.GetTranspose();
             g.MakeSCC();
+            List<int> expected = new List<int> { 3, 1, 1 };
+            Assert.IsTrue(expected.SequenceEqual(g.sccSizes));
         }
     }
 }
